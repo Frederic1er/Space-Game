@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Création d'un mini jeu de combat au tour par tour en JavaScript.'" />
+    <meta name="autor" content="Clémence Laffont" />
+    <title>combatGame</title>
+    <link href="https://fonts.googleapis.com/css?family=Kumar+One" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="icon" type="image/png" href="Amiral.png" />
+</head>
+
+<body>
+    <div id="jeu">
+        <header>
+            <section class="barreVie" id="aVie">
+                <h2>250</h2>
+                <div></div>
+            </section>
+            <div class="subneon">
+                <div class="neon"></div>
+                <section id="message">
+                    <img src="Amiral.png" alt="photo de l'amiral du vaisseau" />
+                    <p>Ennemie en approche. J'attend vos instructions mon commandant.</p>
+                </section>
+                <div class="neon"></div>
+            </div>
+            <section class="barreVie" id="eVie">
+                <h2>250</h2>
+                <div></div>
+            </section>
+        </header>
+        <main>
+            <h1></h1>
+            <img src="vaisseau.png" alt="vaisseau mere allier" id="vAllier" />
+            <img src="alien.png" alt="vaisseau ennemie" id="vEnnemie" />
+
+            <img src="helper.png" alt="Chasseur alliers" class="chasseur" id="chasseur1" />
+            <img src="helper.png" alt="Chasseur alliers" class="chasseur" id="chasseur2" />
+            <img src="helper.png" alt="Chasseur alliers" class="chasseur" id="chasseur3" />
+            <img src="helper.png" alt="Chasseur alliers" class="chasseur" id="chasseur4" />
+
+            <div id="piuAllierD">
+                <div id="piuAllierA"></div>
+            </div>
+            <div id="piuEnnemieD">
+                <div id="piuEnnemieA"></div>
+            </div>
+
+            <div id="piuChasseur1">
+                <div class="piuChasseur"></div>
+            </div>
+            <div id="piuChasseur2">
+                <div class="piuChasseur"></div>
+            </div>
+            <div id="piuChasseur3">
+                <div class="piuChasseur"></div>
+            </div>
+            <div id="piuChasseur4">
+                <div class="piuChasseur"></div>
+            </div>
+
+            <div class="boum" id="boumEnnemie"></div>
+            <div class="boum" id="boumAllier"></div>
+            <div class="boum" id="boumEnnemieC1"></div>
+            <div class="boum" id="boumEnnemieC2"></div>
+            <div class="boum" id="boumEnnemieC3"></div>
+            <div class="boum" id="boumEnnemieC4"></div>
+
+            <div id="bouclier"></div>
+
+            <div id="ennergie"></div>
+            <div id="stun"></div>
+
+            <div id="destructionAllier">
+                <div class="boum" id="boum1"></div>
+                <div class="boum" id="boum2"></div>
+                <div class="boum" id="boum3"></div>
+                <div class="boum" id="boum4"></div>
+                <div class="boum" id="boum5"></div>
+            </div>
+            <div id="destructionEnnemie">
+                <div class="boum" id="boum6"></div>
+                <div class="boum" id="boum7"></div>
+                <div class="boum" id="boum8"></div>
+                <div class="boum" id="boum9"></div>
+                <div class="boum" id="boum10"></div>
+                <div class="boum" id="boum11"></div>
+                <div class="boum" id="boum12"></div>
+                <div class="boum" id="boum13"></div>
+                <div class="boum" id="boum14"></div>
+            </div>
+
+        </main>
+        <footer>
+            <div class="subneon">
+                <div class="neon"></div>
+                <dl>
+                    <dt>Tire Plasmas</dt>
+                    <dd>Envois une decharge plasma en direction de l'ennemie. Il y a 1 chance sur 10 que le tire rate et passe a coté du vaisseau ennemie. Si touché peut faire entre 10 et 20 points de dégas.</dd>
+                    <dt>Rayon à Ennergie</dt>
+                    <dd>Envoie une decharge ennergetique en direction de l'ennemie. Il y a une chance sur 5 que l'attaque n'ai aucun effet sur l'ennemie. Si touché empeche l'ennemie d'attaqué pendant 2 tour. Met 1 tours a se recharger.</dd>
+                </dl>
+                <div class="neon"></div>
+            </div>
+            <section>
+                <button class="commande" id="usePlasma">
+                Tire Plasma
+            </button>
+
+                <button class="commande" id="useBouclier">
+                Activation du Bouclier
+            </button>
+                <button class="commande" id="useEnnergie">
+                Rayon à Ennergie
+            </button>
+                <button class="commande" id="useChasseur">
+                Envoyer un Chasseur
+            </button>
+            </section>
+            <div class="subneon">
+                <div class="neon"></div>
+                <dl>
+                    <dt>Activation du Bouclier</dt>
+                    <dd>Ative un bouclier protecteur autour du vaisseau mere. Vous rend invulnérable pendnat 2 tours. Met 1 tour a se recharger</dd>
+                    <dt>Envoyer un Chasseur</dt>
+                    <dd>Fait apparaitre un chasseur allier a coté du vaisseau mere. Il tirera un coup de blaster en meme temps que votre tire plasma et pendant l'activation de votre bouclier tant qu'il n'a pas été détruit effectuant entre 3 et 10 points de
+                        dégas a chaque fois. Il vous en reste <span id="chasseurRestant">4</span> dans votre hangar.</dd>
+                </dl>
+                <div class="neon"></div>
+            </div>
+        </footer>
+    </div>
+    <script type="text/javascript" src="script.js"></script>
+</body>
+
+
+</html>

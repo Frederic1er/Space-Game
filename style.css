@@ -1,0 +1,697 @@
+@import url('https://fonts.googleapis.com/css?family=Orbitron');
+@import url('https://fonts.googleapis.com/css?family=Kumar+One');
+#jeu {
+    width: 1200px;
+    height: 600px;
+    margin: 10px auto;
+    background-image: url(fond.jpg);
+    background-size: 1200px 600px;
+    background-position: center;
+    border: 10px solid black;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Orbitron', sans-serif;
+    color: #43edf8;
+    border: 10px ridge #cfcfcf;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.barreVie {
+    height: 40px;
+    width: 250px;
+}
+
+.barreVie div {
+    height: 10px;
+    width: 250px;
+    background: #43edf8;
+    box-shadow: 0 0 15px 0 rgba(67, 237, 248, 0.5);
+    opacity: 0.8;
+    transform: skew(45deg);
+}
+
+.barreVie h2 {
+    padding: 0px;
+    margin: 0px;
+}
+
+#message {
+    width: 500px;
+    height: 80px;
+    padding: 10px;
+    border-top: 1px solid #1e73ac;
+    background: repeating-linear-gradient(rgba(7, 69, 110, 0.3) 0px, transparent 3px), rgba(2, 46, 75, 0.93);
+    display: flex;
+    flex-direction: row;
+}
+
+.neon {
+    width: 4px;
+    background: #43edf8;
+    box-shadow: 0 0 15px 0 rgba(67, 237, 248, 0.5);
+}
+
+.subneon {
+    display: flex;
+    padding: 10px;
+}
+
+#message img {
+    height: 80px;
+    opacity: 0.7;
+    box-shadow: 0px 0px 5px 2px rgba(67, 237, 248, 0.2);
+}
+
+#message p {
+    flex-grow: 1;
+    text-align: center;
+    font-size: 1.3em;
+    padding: 10px;
+    margin: 0px;
+}
+
+footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+footer section {
+    width: 300px;
+    height: 150px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+footer dl {
+    margin: 0px;
+    padding: 5px;
+    width: 400px;
+    font-size: 0.9em;
+    background: repeating-linear-gradient(rgba(7, 69, 110, 0.3) 0px, transparent 3px), rgba(2, 46, 75, 0.93);
+    border-top: 1px solid #1e73ac;
+}
+
+.commande {
+    width: 139px;
+    margin: 5px;
+    height: 64px;
+    text-align: center;
+    font-family: 'Orbitron', sans-serif;
+    padding: 5px;
+    background-color: hsl(0, 0%, 90%);
+    transition: color .2s;
+    border-radius: .5em;
+    background-image: -webkit-repeating-linear-gradient(left, hsla(0, 0%, 100%, 0) 0%, hsla(0, 0%, 100%, 0) 6%, hsla(0, 0%, 100%, .1) 7.5%), -webkit-repeating-linear-gradient(left, hsla(0, 0%, 0%, 0) 0%, hsla(0, 0%, 0%, 0) 4%, hsla(0, 0%, 0%, .03) 4.5%), -webkit-repeating-linear-gradient(left, hsla(0, 0%, 100%, 0) 0%, hsla(0, 0%, 100%, 0) 1.2%, hsla(0, 0%, 100%, .15) 2.2%), linear-gradient(180deg, hsl(0, 0%, 78%) 0%, hsl(0, 0%, 90%) 47%, hsl(0, 0%, 78%) 53%, hsl(0, 0%, 70%)100%);
+    color: hsl(210, 100%, 40%);
+    text-shadow: hsla(210, 100%, 20%, .3) 0 -1px 0, hsl(210, 100%, 85%) 0 2px 1px, hsla(200, 100%, 80%, 1) 0 0 5px, hsla(210, 100%, 50%, .6) 0 0 20px;
+    box-shadow: inset hsla(210, 100%, 30%, 1) 0 0px 0px 4px, /* border */
+    inset hsla(210, 100%, 15%, .4) 0 -1px 5px 4px, /* soft SD */
+    inset hsla(210, 100%, 20%, .25) 0 -1px 0px 7px, /* bottom SD */
+    inset hsla(210, 100%, 100%, .7) 0 2px 1px 7px, /* top HL */
+    hsla(210, 100%, 75%, .8) 0 0px 0px 0px, /* outer SD */
+    hsla(210, 50%, 40%, .25) 0 -1px 6px 0px, /* outer SD */
+    hsla(210, 80%, 95%, 1) 0 1px 6px 0px;
+    /* outer HL */
+}
+
+.commande:disabled {
+    color: hsla(0, 0%, 20%, 1);
+    text-shadow: hsla(0, 0%, 40%, .5) 0 -1px 0, hsla(0, 0%, 100%, .6) 0 2px 1px;
+    box-shadow: inset hsla(0, 0%, 15%, 1) 0 0px 0px 4px, /* border */
+    inset hsla(0, 0%, 15%, .8) 0 -1px 5px 4px, /* soft SD */
+    inset hsla(0, 0%, 0%, .25) 0 -1px 0px 7px, /* bottom SD */
+    inset hsla(0, 0%, 100%, .7) 0 2px 1px 7px, /* top HL */
+    hsla(0, 0%, 0%, .15) 0 -1px 6px 0px, /* outer SD */
+    hsla(0, 0%, 100%, .5) 0 1px 6px 0px;
+    /* outer HL */
+}
+
+main {
+    flex-grow: 1;
+    position: relative;
+}
+
+h1 {
+    font-family: 'Kumar One', cursive;
+    font-size: 5em;
+    position: absolute;
+    color: white;
+    z-index: 2;
+    text-align: center;
+    width: 100%;
+    display: none;
+    animation: apparition 0.5s ease-in;
+}
+
+
+/*--------------------------------------*/
+
+@keyframes piuAllierD {
+    0% {}
+    100% {
+        left: 1000px;
+    }
+}
+
+@keyframes piuAllierA {
+    0% {
+        opacity: 1;
+        background-position: 0px 0px;
+    }
+    30% {
+        background-position: -30px 0px;
+    }
+    60% {
+        background-position: -60px 0px;
+    }
+    100% {
+        background-position: -60px 0px;
+        opacity: 1;
+    }
+}
+
+@keyframes piuChasseurA {
+    0% {
+        opacity: 1;
+        background-position: 0px 0px;
+    }
+    30% {
+        background-position: -15px 0px;
+    }
+    60% {
+        background-position: -30px 0px;
+    }
+    100% {
+        background-position: -30px 0px;
+        opacity: 1;
+    }
+}
+
+@keyframes piuEnnemieD {
+    0% {}
+    30% {
+        left: 955px;
+    }
+    100% {
+        left: 145px;
+    }
+}
+
+@keyframes piuEnnemieA {
+    0% {
+        background-position: 50px 0px;
+        width: 35px;
+        opacity: 1;
+    }
+    10% {
+        background-position: 95px 0px;
+        width: 35px;
+        opacity: 1;
+    }
+    20% {
+        background-position: 140px 0px;
+        width: 35px;
+        opacity: 1;
+    }
+    30% {
+        background-position: 200px 0px;
+        width: 50px;
+        opacity: 1;
+    }
+    40% {
+        background-position: 250px 0px;
+        opacity: 1;
+    }
+    50% {
+        background-position: 300px 0px;
+        opacity: 1;
+    }
+    100% {
+        background-position: 300px 0px;
+        opacity: 1;
+    }
+}
+
+@keyframes grosBoum {
+    0% {
+        background-position: 0px 0px;
+        opacity: 1;
+    }
+    5% {
+        background-position: -100px 0px;
+    }
+    10% {
+        background-position: -200px 0px;
+    }
+    15% {
+        background-position: -300px 0px;
+    }
+    20% {
+        background-position: -400px 0px;
+    }
+    25% {
+        background-position: -500px 0px;
+        opacity: 1;
+    }
+    30% {
+        background-position: -500px 0px;
+        opacity: 0.5;
+    }
+    40% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes apparition {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes disparition {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes ennergie {
+    0% {
+        opacity: 0;
+    }
+    30% {
+        opacity: 1;
+        background-position: 0px 0px;
+    }
+    37% {
+        opacity: 1;
+        background-position: 0px 70px;
+    }
+    44% {
+        opacity: 1;
+        background-position: 0px 140px;
+    }
+    51% {
+        opacity: 1;
+        background-position: 0px 210px;
+    }
+    58% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes backEnnergie {
+    0% {
+        background-image: url(fond.jpg);
+    }
+    15% {
+        background-image: url(fond.jpg);
+    }
+    25% {
+        background-image: none;
+    }
+    35% {
+        background-image: url(fond.jpg);
+    }
+    55% {
+        background-image: url(fond.jpg);
+    }
+    65% {
+        background-image: none;
+    }
+    75% {
+        background-image: url(fond.jpg);
+    }
+    100% {
+        background-image: url(fond.jpg);
+    }
+}
+
+@keyframes stun {
+    0% {
+        opacity: 1;
+        background-position: -1000px -250px;
+    }
+    7% {
+        background-position: 0px -250px;
+    }
+    14% {
+        background-position: -750px -250px;
+    }
+    21% {
+        background-position: -250px -250px;
+        opacity: 1;
+    }
+    28% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+#vAllier {
+    transform: rotate(90deg);
+    width: 100px;
+    position: absolute;
+    left: 100px;
+    top: 100px;
+    z-index: 3;
+}
+
+#vEnnemie {
+    transform: rotate(270deg);
+    width: 270px;
+    position: absolute;
+    left: 880px;
+    top: 10px;
+    z-index: 3;
+}
+
+.chasseur {
+    transform: rotate(90deg);
+    width: 30px;
+    position: absolute;
+    animation: apparition 0.5s linear;
+    z-index: 3;
+}
+
+#chasseur1 {
+    left: 200px;
+    top: 50px;
+    display: none;
+}
+
+#chasseur2 {
+    left: 200px;
+    top: 210px;
+    display: none;
+}
+
+#chasseur3 {
+    left: 260px;
+    top: 90px;
+    display: none;
+}
+
+#chasseur4 {
+    left: 260px;
+    top: 170px;
+    display: none;
+}
+
+#piuAllierD {
+    position: absolute;
+    left: 173px;
+    top: 114px;
+    animation: piuAllierD ease-in 1s;
+    z-index: 1;
+    display: none;
+}
+
+#piuAllierA {
+    background: url(piu.png);
+    width: 40px;
+    height: 70px;
+    background-size: 195px;
+    background-position: 0px 0px;
+    animation: piuAllierA step-start 1s;
+    opacity: 0;
+}
+
+#piuEnnemieD {
+    position: absolute;
+    left: 950px;
+    top: 120px;
+    animation: piuEnnemieD ease-in 1s;
+    z-index: 1;
+    display: none;
+}
+
+#piuEnnemieA {
+    background: url(piue.png);
+    width: 50px;
+    height: 50px;
+    background-size: 300px;
+    background-position: 0px 0px;
+    animation: piuEnnemieA step-start 1s;
+    opacity: 0;
+}
+
+.piuChasseur {
+    background: url(piu.png);
+    width: 15px;
+    height: 30px;
+    background-size: 90px;
+    background-position: 0px 0px;
+    animation: piuChasseurA step-start 1s;
+    opacity: 0;
+}
+
+#piuChasseur1 {
+    position: absolute;
+    left: 205px;
+    top: 50px;
+    animation: piuAllierD ease-in 1s;
+    z-index: 1;
+    display: none;
+}
+
+#piuChasseur2 {
+    position: absolute;
+    left: 205px;
+    top: 210px;
+    animation: piuAllierD ease-in 1s;
+    z-index: 1;
+    display: none;
+}
+
+#piuChasseur3 {
+    position: absolute;
+    left: 265px;
+    top: 90px;
+    animation: piuAllierD ease-in 1s;
+    z-index: 1;
+    display: none;
+}
+
+#piuChasseur4 {
+    position: absolute;
+    left: 265px;
+    top: 170px;
+    animation: piuAllierD ease-in 1s;
+    z-index: 1;
+    display: none;
+}
+
+.boum {
+    background-image: url(boum.png);
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-size: 600px;
+    opacity: 0;
+    animation: grosBoum step-end 1.5s;
+    z-index: 4;
+}
+
+#boumEnnemie {
+    left: 930px;
+    top: 95px;
+    display: none;
+}
+
+#boumEnnemieC1 {
+    left: 1000px;
+    top: 5px;
+    display: none;
+}
+
+#boumEnnemieC2 {
+    left: 1000px;
+    top: 165px;
+    display: none;
+}
+
+#boumEnnemieC3 {
+    left: 900px;
+    top: 55px;
+    display: none;
+}
+
+#boumEnnemieC4 {
+    left: 900px;
+    top: 125px;
+    display: none;
+}
+
+#boumAllier {
+    left: 130px;
+    top: 95px;
+    display: none;
+}
+
+#bouclier {
+    background: url(shield.png);
+    width: 150px;
+    height: 150px;
+    background-size: 150px;
+    position: absolute;
+    left: 72px;
+    top: 70px;
+    animation: apparition ease-in 1s;
+    display: none;
+    z-index: 4;
+}
+
+#ennergie {
+    background: url(lightning.png);
+    width: 850px;
+    height: 70px;
+    background-size: 300px;
+    background-position: 0px 0px;
+    position: absolute;
+    left: 150px;
+    top: 110px;
+    opacity: 0;
+    animation: ennergie step-end 1s;
+    display: none;
+    z-index: 4;
+}
+
+.backEnnergie {
+    animation: backEnnergie ease-in 1s;
+}
+
+#stun {
+    background: url(foudre.png-original);
+    width: 200px;
+    height: 200px;
+    background-size: 1200px;
+    background-position: 0px -250px;
+    position: absolute;
+    left: 910px;
+    top: 50px;
+    opacity: 0;
+    animation: stun 2s step-end infinite;
+    display: none;
+    z-index: 4;
+}
+
+#destructionAllier {
+    display: none;
+}
+
+#destructionEnnemie {
+    display: none;
+}
+
+#boum1 {
+    left: 130px;
+    top: 95px;
+    display: none;
+}
+
+#boum2 {
+    left: 40px;
+    top: 95px;
+    display: none;
+}
+
+#boum3 {
+    left: 85px;
+    top: 95px;
+    display: none;
+}
+
+#boum4 {
+    left: 85px;
+    top: 130px;
+    display: none;
+}
+
+#boum5 {
+    left: 85px;
+    top: 50px;
+    display: none;
+}
+
+#boum6 {
+    left: 930px;
+    top: 80px;
+    display: none;
+}
+
+#boum7 {
+    left: 960px;
+    top: 110px;
+    display: none;
+}
+
+#boum8 {
+    left: 990px;
+    top: 80px;
+    display: none;
+}
+
+#boum9 {
+    left: 1020px;
+    top: 110px;
+    display: none;
+}
+
+#boum10 {
+    left: 1050px;
+    top: 80px;
+    display: none;
+}
+
+#boum11 {
+    left: 900px;
+    top: 50px;
+    display: none;
+}
+
+#boum12 {
+    left: 900px;
+    top: 140px;
+    display: none;
+}
+
+#boum13 {
+    left: 990px;
+    top: 50px;
+    display: none;
+}
+
+#boum14 {
+    left: 990px;
+    top: 140px;
+    display: none;
+}
+
+.disparition {
+    animation: disparition 1.2s ease;
+    opacity: 0;
+}
